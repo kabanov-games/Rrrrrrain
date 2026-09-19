@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { Client } from "colyseus.js";
-import { NET, WORLD, HAND_TYPES, SPELLS, ENEMY_TYPES, ITEMS, ITEMS_BY_ID, COMBAT, SURVIVOR, difficultyLabel, LEVELS, stackedPassives, sumItemStat, xpToNextLevel, RUN, EQUIPMENT, stageKind } from "@mhfps/shared";
+import { GAME, NET, WORLD, HAND_TYPES, SPELLS, ENEMY_TYPES, ITEMS, ITEMS_BY_ID, COMBAT, SURVIVOR, difficultyLabel, LEVELS, stackedPassives, sumItemStat, xpToNextLevel, RUN, EQUIPMENT, stageKind } from "@mhfps/shared";
 import { setupHub, setupArena, disposeGroup, animateTorches, updateArenaPortal, getArenaPortalPos, setArenaPortalPosition, updateHubPortal, getHubPortalPos, playerInsidePortal, playerNearPortal, animateDangerZones, createHubSlotMesh, makeSlotContent, createHubChestMesh, updateChestCount, setChestOpen } from "./world.js";
 import { setupTerrainV3, terrainHeight, applyArenaTheme } from "./worldV3.js";
 import { createCacodemonSprite, updateCacodemonSprite } from "./enemyV3.js";
@@ -15,6 +15,12 @@ import { createPedestalMesh, animatePedestal, createFloatingLootCard, animateFlo
 import { FpsController } from "./controller.js";
 import { initAudio, playSound, playSoundLoop, stopSoundLoop, setMasterVolume, getMasterVolume } from "./assets.js";
 import { hudSprite, HAND_SPRITE } from "./weaponHud.js";
+
+document.title = `${GAME.title} — v${GAME.version}`;
+const menuTitle = document.querySelector("#menu h1");
+if (menuTitle) menuTitle.textContent = GAME.title;
+const menuSub = document.querySelector("#menu > p");
+if (menuSub) menuSub.textContent = `кооп · третье лицо · pixel · v${GAME.version}`;
 
 // ═══════════════════════════════════════════════════════════════════
 // DOM

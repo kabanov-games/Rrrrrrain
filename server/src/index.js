@@ -5,7 +5,7 @@ import express from "express";
 import { createServer } from "http";
 const { Server } = colyseus.default || colyseus;
 import { ArenaRoom } from "./ArenaRoom.js";
-import { NET } from "../../shared/index.js";
+import { GAME, NET } from "../../shared/index.js";
 
 const PORT = Number(process.env.PORT || 2567);
 
@@ -23,6 +23,6 @@ const gameServer = new Server({
 gameServer.define(NET.ROOM_NAME, ArenaRoom).filterBy(["lobbyId"]);
 
 gameServer.listen(PORT).then(() => {
-  console.log(`[server] Rrrrrrain listening on :${PORT}`);
+  console.log(`[server] ${GAME.title} (${GAME.titleEn} v${GAME.version}) listening on :${PORT}`);
   console.log(`[server] monitor: http://localhost:${PORT}/colyseus`);
 });
