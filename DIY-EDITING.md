@@ -9,6 +9,7 @@ npm run build
 ```
 
 Источник правды по геймплею: `CONCEPT.md` (петля ливня) и `shared/index.js`.
+Карта систем: `docs/ARCHITECTURE.md`.
 
 ---
 
