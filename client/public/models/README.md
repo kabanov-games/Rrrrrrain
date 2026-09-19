@@ -1,4 +1,4 @@
-# Хххххх Ххххххх — 3D model assets
+# Rrrrrrain — 3D model assets
 
 All models below are **CC0 / Public Domain** (Creative Commons Zero v1.0). Free to use, modify, and redistribute for any purpose, including commercial, no attribution required.
 

@@ -2,14 +2,6 @@
 // Keep this file plain JS so both browser and Node import cleanly.
 // v0.0.9.0: named exports used by the client HUD/controller (sumItemStat).
 
-/** Игровое имя (RU) и технический id репозитория. */
-export const GAME = {
-  id: "rrrrrrain",
-  title: "Хххххх Ххххххх",
-  titleEn: "Rrrrrrain",
-  version: "0.0.9.1",
-};
-
 export const NET = {
   TICK_RATE: 20,                 // server broadcast Hz
   PLAYER_SEND_HZ: 30,            // client input send rate (повышено для меньшего рассинхрона yaw)
